@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter_08_codingchef09_material3/pages/home.dart';
+import 'package:study_flutter_08_codingchef09_material3/pages/search.dart';
+import 'package:study_flutter_08_codingchef09_material3/pages/settings.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
@@ -44,6 +47,22 @@ class _NavigationState extends State<Navigation> {
             ),
           ),
         ],
+        animationDuration: const Duration(
+          milliseconds: 500,
+        ),
+      ),
+      appBar: AppBar(
+        title: const Text("Navigation"),
+      ),
+      body: Center(
+        child: IndexedStack(
+          index: selectedIndex,
+          children: const [
+            HomePage(),
+            SearchPage(),
+            Settings(),
+          ],
+        ),
       ),
     );
   }
